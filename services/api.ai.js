@@ -15,7 +15,7 @@ module.exports=function(requestText,session){
           id: session
         },
         message: {
-          text: response
+          text: response.result.fulfillment.speech;
         }
       };
       callSendAPI(messageData);
