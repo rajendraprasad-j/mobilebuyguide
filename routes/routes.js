@@ -1,4 +1,5 @@
-
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 module.exports=function(app){
   app.get("/data",function(req,res){
     res.send("Welcome");
@@ -13,7 +14,7 @@ module.exports=function(app){
       res.sendStatus(403);
     }
   });
-  app.post('/webhook', function (req, res) {
+  app.post('/webhook', jsonParser,function (req, res) {
     console.log(req);
     var data = req.body;
 
