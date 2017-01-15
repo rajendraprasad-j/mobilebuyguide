@@ -14,6 +14,7 @@ module.exports=function(app){
     }
   });
   app.post('/webhook', function (req, res) {
+    console.log(req);
     var data = req.body;
 
     // Make sure this is a page subscription
