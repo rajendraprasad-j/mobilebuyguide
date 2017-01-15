@@ -12,7 +12,7 @@ module.exports=function(requestText,session){
       console.log(response);
       var messageData = {
         recipient: {
-          id: sessionId
+          id: session
         },
         message: {
           text: response
