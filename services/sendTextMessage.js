@@ -1,4 +1,3 @@
-var request = require('request');
 var callSendAPI=require("./api.ai")
 
 module.exports=function sendTextMessage(recipientId, messageText) {

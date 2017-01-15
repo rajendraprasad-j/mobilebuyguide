@@ -1,12 +1,14 @@
 var apiai = require('apiai');
+var request = require('request');
+
 var PAGE_ACCESS_TOKEN="EAAJ94KKZCT1IBAMWoxJApEeFwa6YjpEMQ5v4IPbeyKPcPdjMeZBDUqfEAE5isxj9xPb6ErpEaK00qEN7LRDzV3qQITldIOZCb4t6FKQdYncD6a2gfCYhZAVLSmaE48UJ5CgssU4UdcJpbBVZBCA8jGYAhCyGkZCtjzS2BYDZC5xLQZDZD";
 var app = apiai("dbdf3c0e3afb40b0a2d1fbb805d0976c");
-module.exports=function(requestText,sessionId){
-  app.textRequest(requestText, {
-      sessionId: sessionId
+module.exports=function(requestText,session){
+  var requestapi = app.textRequest(requestText, {
+    sessionId: session
   });
 
-  request.on('response', function(response) {
+  requestapi.on('response', function(response) {
       console.log(response);
       var messageData = {
         recipient: {
@@ -19,10 +21,10 @@ module.exports=function(requestText,sessionId){
       callSendAPI(messageData);
   });
 
-  request.on('error', function(error) {
+  requestapi.on('error', function(error) {
       console.log(error);
   });
-  request.end();
+  requestapi.end();
 
 }
 
