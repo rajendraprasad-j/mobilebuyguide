@@ -77,4 +77,7 @@ module.exports=function(app){
   function sendGenericMessage(recipientId, messageText) {
     // To be expanded in later sections
   }
+  function sendTextMessage(recipientId, messageText) {
+    // To be expanded in later sections
+  }
 }
