@@ -1,5 +1,5 @@
 var bodyParser = require('body-parser');
-var sendTextMessage=require("../services/receivedMessage.js");
+var receivedMessage=require("../services/receivedMessage.js");
 
 var jsonParser = bodyParser.json();
 module.exports=function(app){

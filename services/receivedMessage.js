@@ -1,5 +1,5 @@
 var sendTextMessage=require("../services/sendTextMessage.js")
-var sendTextMessage=require("../services/sendGenericMessage.js")
+var sendGenericMessage=require("../services/sendGenericMessage.js")
 
 module.exports=function receivedMessage(event) {
   var senderID = event.sender.id;
